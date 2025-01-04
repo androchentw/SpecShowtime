@@ -1,0 +1,10 @@
+node_modules
+.idea
+public
+bin
+
+.gitignore
+.prettierignore
+Dockerfile
+*.md
+*.woff
