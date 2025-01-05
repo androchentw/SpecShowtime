@@ -10,10 +10,12 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "test:gen": "npx bddgen",
-    "test:spec": "pnpm exec playwright test",
-    "test:showtime": "pnpm exec playwright show-report spec/report/playwright-report",
-    "test:specshowtime": "pnpm run test:gen && pnpm run test:spec && pnpm run test:showtime"
+    "spec:genfeature": "echo genfeature",
+    "spec:gen-pwbdd": "npx bddgen",
+    "spec:genall": "pnpm spec:genfeature && pnpm spec:gen-pwbdd",
+    "spec:test": "pnpm exec playwright test",
+    "spec:allure": "allure generate --clean --single-file ./spec/reports/allure-results/ -o spec/reports/allure-report",
+    "spec:e2e": "pnpm spec:genall && pnpm spec:test && pnpm spec:allure"
   },
   "dependencies": {
     "@types/node": "22.10.3",
@@ -33,6 +35,8 @@
     "@playwright/test": "^1.49.1",
     "@typescript-eslint/eslint-plugin": "^8.19.0",
     "@typescript-eslint/parser": "^8.19.0",
+    "allure-js-commons": "^3.0.7",
+    "allure-playwright": "^3.0.7",
     "eslint": "9.17.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",

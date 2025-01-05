@@ -1,0 +1,62 @@
+---
+type: persona
+---
+name: Sam
+tags:
+  - membership: premium
+segmentation:
+  demography:
+    age: 30
+    gender: male
+    education: bachelor
+    occupation: software-engineer
+    skills:
+      - skill: python
+        seniority: 3
+      - skill: javascript
+        seniority: 2
+      - skill: cloud-computing
+        seniority: 4
+  geography:
+    countryCode: TW # Taiwan ${ISO-3166-1-alpha-2}
+    location: '{
+      "type": "Point",
+      "coordinates": [
+        121.564468,
+        25.033964
+      ]
+    }' # GeoJSON for Taipei, Taiwan
+  psychographics:
+    personality: # ${5-factor-model}
+      openness: high
+      conscientiousness: medium
+      extraversion: low
+      agreeableness: medium
+      neuroticism: low
+    socialStatus: middle-class
+    lifestyles:
+      - activity: "reading tech blogs"
+        interest: "emerging technologies"
+        opinion: "AI will transform industries"
+      - activity: "hiking"
+        interest: "nature and outdoor activities"
+        opinion: "Work-life balance is essential"
+    values:
+      - belief: "Continuous learning is key to success"
+      - belief: "Team collaboration drives innovation"
+  behavior:
+    pattern:
+      usage: "frequent user of productivity tools like Jira and GitHub"
+      engagement: "active contributor to open-source projects"
+    activities:
+      - journey: "Learns about new tools via online communities, evaluates them through personal projects, and adopts them in professional workflows"
+valuePropositionProfile:
+  jobs: # mission / objective / goal
+    - job: "Develop scalable frontend and backend systems"
+    - job: "Ensure code quality and maintainability"
+  pains: # -> pain reliever
+    - pain: "Spending too much time debugging legacy code"
+    - pain: "Difficulty keeping up with rapidly evolving technologies"
+  gains: # benefit -> gain creator
+    - gain: "Improved productivity with automation tools"
+    - gain: "Access to reliable learning resources for upskilling"

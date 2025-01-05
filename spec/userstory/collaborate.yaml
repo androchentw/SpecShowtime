@@ -1,0 +1,34 @@
+---
+type: userstory
+---
+epic:
+  title: "Collaborative Problem-Solving Features"
+  priority: critical
+  businessValue: >
+    Enable interdisciplinary collaboration between software engineers and data scientists to solve complex problems together, fostering innovation and teamwork.
+  description: >
+    Develop features that allow users to collaborate on coding challenges through pair programming, team-based hackathons, and shared problem-solving spaces.
+  objectives:
+    - "Provide a pair programming feature for real-time collaboration."
+    - "Enable team-based hackathons for solving real-world problems."
+    - "Create shared workspaces where users can discuss and solve challenges together."
+  acceptanceCriteria:
+    - "Users can invite others to collaborate on coding challenges in real time."
+    - "Team-based hackathons are available with clear rules and leaderboards."
+    - "Shared workspaces allow users to discuss solutions and share ideas."
+
+stories:
+  - title: "Pair Programming Feature"
+    persona: all
+    feature: "Collaborate with others in real-time on coding problems"
+    benefit: "Learn from peers and solve problems faster"
+
+  - title: "Team-Based Hackathons"
+    persona: all
+    feature: "Participate in interdisciplinary hackathons"
+    benefit: "Collaborate with engineers to solve real-world problems"
+
+  - title: "Shared Workspaces for Challenges"
+    persona: all
+    feature: "Discuss solutions and share ideas in a collaborative space"
+    benefit: "Foster teamwork and exchange knowledge effectively"

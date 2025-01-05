@@ -1,0 +1,62 @@
+---
+type: persona
+---
+name: Daisy
+tags: 
+  - membership: free
+segmentation:
+  demography:
+    age: 28
+    gender: female
+    education: master
+    occupation: data-scientist
+    skills:
+      - skill: machine-learning
+        seniority: 4
+      - skill: data-visualization
+        seniority: 3
+      - skill: SQL
+        seniority: 5
+  geography:
+    countryCode: US # United States (ISO-3166-1-alpha-2)
+    location: '{
+      "type": "Point",
+      "coordinates": [
+        -122.431297,
+        37.773972
+      ]
+    }' # GeoJSON for San Francisco, California
+  psychographics:
+    personality: # ${5-factor-model}
+      openness: very-high
+      conscientiousness: high
+      extraversion: medium
+      agreeableness: high
+      neuroticism: low
+    socialStatus: upper-middle-class
+    lifestyles:
+      - activity: "attending data science meetups"
+        interest: "networking with industry professionals"
+        opinion: "Collaboration accelerates innovation"
+      - activity: "practicing yoga"
+        interest: "mindfulness and well-being"
+        opinion: "Mental health is as important as physical health"
+    values:
+      - belief: "Data can drive meaningful change in the world"
+      - belief: "Diversity in teams leads to better solutions"
+  behavior:
+    pattern:
+      usage: "frequent user of Jupyter Notebooks and cloud platforms like AWS"
+      engagement: "regular participant in Kaggle competitions and hackathons"
+    activities:
+      - journey: "Explores datasets through online repositories, builds models iteratively, and shares insights via dashboards or reports"
+valuePropositionProfile:
+  jobs: # mission / objective / goal
+    - job: "Analyze large datasets to uncover actionable insights"
+    - job: "Build predictive models to support business decisions"
+  pains: # -> pain reliever
+    - pain: "Struggling with incomplete or messy datasets"
+    - pain: "Time-consuming process to deploy machine learning models to production"
+  gains: # benefit -> gain creator
+    - gain: "Streamlined workflows for data preprocessing and model deployment"
+    - gain: "Access to cutting-edge tools for advanced analytics"

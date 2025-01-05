@@ -1,5 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
+import { Status } from 'allure-js-commons';
+import * as os from 'node:os';
 
 /**
  * Read environment variables from the file.
@@ -14,14 +16,15 @@ import { defineBddConfig } from 'playwright-bdd';
  */
 
 const testDirBdd = defineBddConfig({
-  featuresRoot: './spec/feature',
-  outputDir: './spec/.features-gen',
+  featuresRoot: './spec/features',
+  outputDir: './spec/.spec-gen',
+  missingSteps: 'skip-scenario'
 });
 
 export default defineConfig({
   testDir: './tests',
   // Folder for test artifacts such as screenshots, videos, traces, etc.
-  outputDir: './spec/report/test-results',
+  outputDir: './spec/reports/test-results',
   // Each test is given 30 seconds.
   timeout: 30000,
   /* Run tests in files in parallel */
@@ -33,7 +36,44 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html', { outputFolder: './spec/report/playwright-report' }]],
+  reporter: [
+    ['html', { outputFolder: './spec/reports/playwright-report' }],
+    [
+      'allure-playwright',
+      {
+        resultsDir: './spec/reports/allure-results',
+        detail: true,
+        suiteTitle: true,
+        links: {
+          issue: {
+            nameTemplate: 'Issue #%s',
+            urlTemplate: 'https://issues.example.com/%s',
+          },
+          tms: {
+            nameTemplate: 'TMS #%s',
+            urlTemplate: 'https://tms.example.com/%s',
+          },
+          jira: {
+            urlTemplate: (v) => `https://jira.example.com/browse/${v}`,
+          },
+        },
+        categories: [
+          {
+            name: 'foo',
+            messageRegex: 'bar',
+            traceRegex: 'baz',
+            matchedStatuses: [Status.FAILED, Status.BROKEN],
+          },
+        ],
+        environmentInfo: {
+          os_platform: os.platform(),
+          os_release: os.release(),
+          os_version: os.version(),
+          node_version: process.version,
+        },
+      },
+    ],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -53,7 +93,7 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-      testDir: testDirBdd
+      testDir: testDirBdd,
     },
 
     {

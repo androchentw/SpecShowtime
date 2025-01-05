@@ -1,0 +1,39 @@
+---
+type: userstory
+---
+epic:
+  title: "Coding Challenge System"
+  priority: major
+  businessValue: >
+    Provide users with a platform to solve programming and data science challenges tailored to their skills, helping them improve technical expertise.
+  description: >
+    Build a system where users can browse, attempt, and solve coding challenges that align with their skillsets and interests. Challenges will include algorithmic problems, data science tasks, and real-world scenarios.
+  objectives:
+    - "Allow users to solve coding challenges in various domains like algorithms and data science."
+    - "Provide difficulty levels to cater to beginners and advanced users."
+    - "Enable users to run code directly in the browser using cloud-based execution."
+  acceptanceCriteria:
+    - "Users can browse challenges by category and difficulty level."
+    - "Users can write and execute code in the browser without local setup."
+    - "The system validates solutions and provides feedback on correctness."
+
+stories:
+  - title: "Browse Coding Challenges"
+    persona: all
+    feature: "Filter challenges by category and difficulty"
+    benefit: "Easily find relevant problems to practice skills"
+
+  - title: "Solve Algorithmic Problems"
+    persona: all
+    feature: "Access Python-based algorithm challenges"
+    benefit: "Enhance problem-solving skills for backend development"
+
+  - title: "Run Code in Browser"
+    persona: all
+    feature: "Cloud-based code execution environment"
+    benefit: "Test solutions without setting up a local environment"
+
+  - title: "Validate Challenge Solutions"
+    persona: all
+    feature: "Automatic validation of submitted solutions"
+    benefit: "Receive immediate feedback on correctness"

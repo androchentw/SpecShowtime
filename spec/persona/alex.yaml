@@ -1,0 +1,67 @@
+---
+type: persona
+---
+name: Alex
+tags:
+  - role: admin
+segmentation:
+  demography:
+    age: 35
+    gender: male
+    education: master
+    occupation: system-administrator
+    skills:
+      - skill: server-administration
+        seniority: 5
+      - skill: database-management
+        seniority: 4
+      - skill: cloud-infrastructure
+        seniority: 4
+      - skill: security-compliance
+        seniority: 3
+  geography:
+    countryCode: GB # United Kingdom ${ISO-3166-1-alpha-2}
+    location: '{
+      "type": "Point",
+      "coordinates": [
+        -0.118092,
+        51.509865
+      ]
+    }' # GeoJSON for London, UK
+  psychographics:
+    personality: # ${5-factor-model}
+      openness: medium
+      conscientiousness: high
+      extraversion: low
+      agreeableness: medium
+      neuroticism: low
+    socialStatus: upper-middle-class
+    lifestyles:
+      - activity: "configuring secure systems"
+        interest: "cybersecurity and data protection"
+        opinion: "Security is the backbone of any reliable system"
+      - activity: "participating in IT forums"
+        interest: "troubleshooting and system optimization"
+        opinion: "Sharing knowledge strengthens the tech community"
+    values:
+      - belief: "Reliability and uptime are non-negotiable"
+      - belief: "Automation reduces human error and improves efficiency"
+  behavior:
+    pattern:
+      usage: "frequent user of monitoring tools like Grafana and Splunk"
+      engagement: "active participant in incident response and resolution"
+    activities:
+      - journey: "Monitors system performance, identifies bottlenecks, and implements solutions to optimize uptime and reliability"
+valuePropositionProfile:
+  jobs: # mission / objective / goal
+    - job: "Ensure system uptime and reliability"
+    - job: "Manage user accounts and permissions securely"
+    - job: "Generate actionable insights from system usage data"
+  pains: # -> pain reliever
+    - pain: "Managing complex user permissions across multiple tiers"
+    - pain: "Difficulty in quickly identifying and resolving system outages"
+    - pain: "Keeping up with compliance requirements for data security"
+  gains: # benefit -> gain creator
+    - gain: "Streamlined tools for managing users and subscriptions"
+    - gain: "Real-time alerts for faster incident resolution"
+    - gain: "Automated compliance checks to ensure data security standards are met"
